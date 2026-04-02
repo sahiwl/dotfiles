@@ -17,7 +17,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -70,7 +70,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting history)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting history zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,3 +121,39 @@ export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 export CATALINA_HOME="/opt/homebrew/opt/tomcat/libexec"
 export PATH="$CATALINA_HOME/bin:$PATH"
+# pnpm
+export PNPM_HOME="/Users/sahilkr/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+alias fastcode="code --disable-gpu --no-sandbox --disable-extensions"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+
+#alias cpp="g++-15"
+alias cpp='f(){ g++-15 "$1" -o "${1%.*}" && ./"${1%.*}"; }; f' //executes immediately
+
+alias ytd720="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --merge-output-format mp4 -o '~/Downloads/YT-Downloads/%(title)s.%(ext)s'"
+
+alias ytb="yt-dlp -f 'best[filesize<=150M]' -o '~/Downloads/YT-Downloads/%(title)s.%(ext)s'"
+
+alias ytbest="yt-dlp -f 'bestvideo+bestaudio' --merge-output-format mkv -o '~/Downloads/YT-Downloads/%(title)s [%(id)s].%(ext)s'"
+
+alias ytb1080="yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' --merge-output-format mkv -o '~/Downloads/YT-Downloads/%(title)s [%(id)s].%(ext)s'"
+
+autoload -U compinit
+compinit
+
+
+# Added by Antigravity
+export PATH="/Users/sahilkr/.antigravity/antigravity/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sahilkr/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Claude Code Local Hub Redirect
+
