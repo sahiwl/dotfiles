@@ -1,0 +1,10 @@
+[shell]
+polkit_agent = true
+[brightness]
+enable_ddcutil = true
+[brightness.monitor.HDMI-A-1]
+backend = "ddcutil"
+[wallpaper]
+directory = "/home/sahilkr/wallpapers"
+directory_light = "/home/sahilkr/wallpapers"
+directory_dark = "/home/sahilkr/wallpapers"
